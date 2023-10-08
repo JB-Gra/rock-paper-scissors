@@ -1,4 +1,25 @@
+let nameInput = document.getElementById('player-name');
+const nameSubmit = document.getElementById('name-submit');
+const inputSection = document.getElementById('name-input');
+const inputArea = document.getElementById('input-area');
 
+nameSubmit.addEventListener('click', () => {
+  let inputValue = nameInput.value;
+  if (inputValue === '') {
+    alert("Forgot to write your name? Let's try again :D")
+  } else {
+    if (confirm(`Is your name ${inputValue}?`) === true) {
+      const playerGreeting = document.createElement('p');
+      playerGreeting.textContent = `Hello, ${inputValue}!`;
+      inputSection.append(playerGreeting);
+      inputArea.remove();
+    }
+  }
+});
+
+const choiceRock = document.getElementById('choice-rock');
+const choicePaper = document.getElementById('choice-paper');
+const choiceScissors = document.getElementById('choice-scissors');
 
 /* 
 function computerPlay() {

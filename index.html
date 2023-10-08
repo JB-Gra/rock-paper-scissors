@@ -15,13 +15,15 @@
   </header>
 
   <section id="name-input">
-    <label>
+    <label for="player-name" id="input-area">
       First things first: What's your name?<br>
-      <input type="text" name="player_name" id="player_name">
+      <input type="text" name="player-name" id="player-name" placeholder="I.e. Jenny Doe, Gary Stu">
+      <button id="name-submit">Submit</button>
     </label>
   </section>
 
   <section id="game">
+    <p id="greeting"></p>
     <p class="instructions">Can you beat the computer? Make your choice!</p>
       <div class="btns">
         <button id="choice-rock">Rock</button>
