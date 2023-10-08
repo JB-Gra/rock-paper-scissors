@@ -1,53 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Let's Play "Rock, paper, scissors"!</title>
-    </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Let's play "Rock, Paper, Scissors"!</title>
+</head>
 
-    <body>
-        <script>
-            // Function that randomize the computer's choice
-            function computerPlay() {
-                const playChoices = ["rock", "paper", "scissors"];
-                return playChoices[Math.floor(Math.random() * 3)];
-            }
+<body>
 
-            // Function that plays one game round
-            function playRound(playerSelection, computerSelection) {
-                if (playerSelection == computerSelection) {
-                    return "It's a tie.";
-                } else if (playerSelection == "rock" && computerSelection == "scissors") {
-                    return "You won! Rock smash scissors!";
-                } else if (playerSelection == "rock" && computerSelection == "paper") {
-                    return "You lose. Paper wraps rock.";
-                } else if (playerSelection == "paper" && computerSelection == "rock") {
-                    return "You won! Paper wraps rock!";
-                } else if (playerSelection == "paper" && computerSelection == "scissors") {
-                    return "You lose. Scissors cuts paper.";
-                } else if (playerSelection == "scissors" && computerSelection == "paper") {
-                    return "You won! Scissors cuts paper!";
-                } else if (playerSelection == "scissors" && computerSelection == "rock") {
-                    return "You lose. Rock smash scissors.";
-                } else {
-                    return "Please, enter a valid option.";
-                }
-            }
-            
-            // Function that iterates a round five times
-            function game() {
-                for (let i = 0; i < 5; i++) {
-                    let userInput = prompt("Which would you choose? Rock, paper or scissors?");
-                    const playerSelection = userInput;
-                    const computerSelection = computerPlay();
-                    console.log(playRound(playerSelection, computerSelection));
-                }
-            }
+  <header>
+    <h2 class="page-title">Let's play Rock, Paper, Scissors!</h2>
+  </header>
 
-            // Shows the results in the console
-            console.log(game());
-        </script>
-    </body>
+  <section id="name-input">
+    <label>
+      First things first: What's your name?<br>
+      <input type="text" name="player_name" id="player_name">
+    </label>
+  </section>
 
+  <section id="game">
+    <p class="instructions">Can you beat the computer? Make your choice!</p>
+      <div class="btns">
+        <button id="choice-rock">Rock</button>
+        <button id="choice-paper">Paper</button>
+        <button id="choice-scissors">Scissors</button>
+      </div>
+  </section>
+
+  <section id="result"></section>
+
+  <script src="script.js"></script>
+  
+</body>
 </html>
